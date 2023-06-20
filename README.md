@@ -13,8 +13,8 @@ A discord bot to automatically translate messages in a channel to a specified la
 - `~lang_search` - Lists if search language is in the list of supported languages and lists all avaliable languages if no search term is given.
 - `~lang_change` - Sets the language to translate messages (english by default).
 
-## Run yourslef
+## Installation
 1. Clone this repository.
 2. Install the required packages using `pip install -r requirements.txt`.
 3. Create a .env file in the root directory of the project and add the following: `DISCORD_TOKEN=<your discord bot token>`
-4. Run the bot using `python bot.py`.
+4. Run the bot using `python main.py`.
