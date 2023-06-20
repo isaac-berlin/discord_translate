@@ -12,7 +12,7 @@ def main():
     allowed_channels = [] 
     BOT_PREFIX = '~'
 
-    Translator = Translator()
+    translator = Translator()
     bot = commands.Bot(command_prefix=BOT_PREFIX, intents=discord.Intents.all())
 
 
@@ -36,13 +36,13 @@ def main():
         if message.channel.id not in allowed_channels:
             return
         msg = message.content.lower()
-        msg_lang = Translator.detect(msg)
+        msg_lang = translator.detect(msg)
         
         # Ignore messages that are already in the desired language
         if msg_lang.lang == return_lang:
             return
         
-        translation = Translator.translate(msg, dest=return_lang, src=msg_lang.lang)
+        translation = translator.translate(msg, dest=return_lang, src=msg_lang.lang)
         channel = message.channel
         await channel.send(translation.text)
         
